@@ -24,9 +24,12 @@ def findContour(image):
 def findContourNumber(image):
 
     cnts,ratio = findContour(image)
+    resized = imutils.resize(image, width=300)
 
     for i in cnts:
-
+        cv2.drawContours(resized, [i], -1, (0, 255, 0), 2)
+        cv2.imshow("Image", resized)
+        cv2.waitKey(0)
         print(len(cnts)) #sonradan ön işleme için bunu bir listede tutabilirsin.
 
 def findLocicalEdge(image):
@@ -41,15 +44,16 @@ def findLocicalEdge(image):
         M = cv2.moments(i)
         cX = int((M["m10"] / M["m00"]))
         cY = int((M["m01"] / M["m00"]))
+
         for j in i:
             a = list(j[0])
-            if j not in karaListe:
-                for k in cnts[0]:
+            if (j[0][0],j[0][1]) not in karaKume:
+                for k in i:# cnts de sıkıntı var
                     b = list(k[0])
 
-                    if abs(k[0][0] - j[0][0]) < abs(cY - j[0][0]) and abs(k[0][1] - j[0][1]) < abs(cX - j[0][1]):
+                    if abs(k[0][0] - j[0][0]) < abs(cX - j[0][0]) and abs(k[0][1] - j[0][1]) < abs(cY - j[0][1]):
                         if a != b:
-                            karaListe.append([k[0][0],k[0][0]])
+                            karaKume.add((k[0][0],k[0][1]))
                     else:
 
                         beyazKume.add((k[0][0],k[0][1])) #tuple şeklinde ekledik çünkü set veri yapısı list türünde eleman almıyor, çünkü list değişkendir
@@ -57,23 +61,26 @@ def findLocicalEdge(image):
                         # hacı bak burada karalistedeki elemanlarıda beyaz listeye ekliyo ama sen zaten en sonunda kara listedeki elemanları
                         # beyaz listeden temizleyeceğin için ayrı bir if değimi eklenmemiştir.
 
-            beyazListe = list(beyazKume)
-
-            #for da index index karşılaştırma yapcan biri tuple biri liste
-            for point in karaListe:
-
-                if (point[0],point[1]) in beyazListe:
-
-                    beyazListe.remove((point[0],point[1]))
+        beyazListe = list(beyazKume)
+        karaListe = list(karaKume)
 
 
-            koseSayisi.append(beyazListe)
+        for point in karaListe:
 
-            beyazKume.clear()
-            karaListe.clear()
+            if point in beyazListe:
+
+                beyazListe.remove(point)
 
 
+        koseSayisi.append(beyazListe)
 
-#başkan for j in karalist i kontrol et
-# for döngüsü yanlış sayıda dönüyo debugla hatayı tespit et
-# karalistedede dublicate eleman var onu çöz
+        beyazKume.clear()
+        karaKume.clear()
+
+
+# burada işeyen kodun mantığı findContour() ile bulunan bir köşe noktasından diğer bulunan köşe noktalarına kaç adet köşe
+# çizilebileceğimizi test etmeye çalışmaktadır. Algoritmanın işleyişi:
+# > kıyaslanan noktaların birbirinden farkını alarak (x-y eksenleri için ayrı ayrı) çıkan sonucu şeklin orta noktası ile kıyaslanan
+# noktanın farkı ile karşılaştırılmasına dayanır. Eğer çıkan sonuc büyük ise muhtemel bir köşe çizilinebilir denmektedir.
+# Bu veri KNN veya başka makine öğrenmesi algoritmalarında bağımsız değişken olarak kullanılacaktır.
+

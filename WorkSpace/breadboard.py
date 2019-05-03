@@ -31,6 +31,8 @@ print(sets,len(sets),type(sets))
 print(kume2.discard((1,2)),kume2, kume3,type(kume3))
 resized = imutils.resize(img, width=300)
 
+resized[100][80] = (255,0,0)
+
 plt.imshow(resized)
 plt.show()
 

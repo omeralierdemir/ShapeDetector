@@ -7,6 +7,7 @@ from matplotlib import pyplot as plt
 dt = DataPreprocessing
 image = cv2.imread("../Images/karisik.png")
 
+#dt.findContourNumber(image)
 dt.findLocicalEdge(image)
 resized = imutils.resize(image, width=300)
 
