@@ -21,16 +21,58 @@ def findContour(image):
     cnts = imutils.grab_contours(cnts)
 
     return cnts,ratio
+
+def findContourWithAprrox(image):
+    cnts, ratio = findContour(image)
+    koseSayisi = []
+
+    for i in cnts:
+        peri = cv2.arcLength(i, True)
+        approx = cv2.approxPolyDP(i, 0.1 * peri, True)
+        koseSayisi.append(approx)
+
+
+def perimeterRadiusRelation(image):
+    cnts, ratio = findContour(image)
+    resized = imutils.resize(image, width=300)
+    oranlar = []
+
+    for i in cnts:
+        perimeter = cv2.arcLength(i, True)
+        (x, y), radius = cv2.minEnclosingCircle(i)
+        center = (int(x), int(y))
+        radius = int(radius) *2
+        oran = round(perimeter / radius ,2)
+        oranlar.append(oran)
+
+        img = cv2.circle(resized, center, int(radius), (0, 255, 0), 2)
+        cv2.imshow("Image", resized)
+        cv2.waitKey(0)
+#burada yapilan islem, tespit edilen seklin cevre uzunlugunu seklin üzerine cizilebilinen minumum alana sahip cemberin cabına oranı
+# sistemimiz için bagımsız degisken olarak kullanılacaktır.
+
 def findContourNumber(image):
 
     cnts,ratio = findContour(image)
     resized = imutils.resize(image, width=300)
-
+    koseSayisi = []
+    a = 0
     for i in cnts:
         cv2.drawContours(resized, [i], -1, (0, 255, 0), 2)
+
+        peri = cv2.arcLength(i, True)
+        approx = cv2.approxPolyDP(i, 0.1 * peri, True)# 0.1 değeri artırıldıpında yanlıs anlamadıysam diger noktalara olan maksimum degerde
+                                                      #artıyor. Bu sebeple cikan kose noktalarinin sayisinda azalma oluyor. En cok azalma
+                                                      # cemberler icin oluyor.
+        koseSayisi.append(approx)
+        print(peri,approx)
+        print(len(koseSayisi[a]))
+        a = a + 1
         cv2.imshow("Image", resized)
         cv2.waitKey(0)
-        print(len(cnts)) #sonradan ön işleme için bunu bir listede tutabilirsin.
+       # print(len(cnts)) #sonradan ön işleme için bunu bir listede tutabilirsin.
+
+
 
 def findLocicalEdge(image):
 
@@ -81,6 +123,7 @@ def findLocicalEdge(image):
 # burada işeyen kodun mantığı findContour() ile bulunan bir köşe noktasından diğer bulunan köşe noktalarına kaç adet köşe
 # çizilebileceğimizi test etmeye çalışmaktadır. Algoritmanın işleyişi:
 # > kıyaslanan noktaların birbirinden farkını alarak (x-y eksenleri için ayrı ayrı) çıkan sonucu şeklin orta noktası ile kıyaslanan
-# noktanın farkı ile karşılaştırılmasına dayanır. Eğer çıkan sonuc büyük ise muhtemel bir köşe çizilinebilir denmektedir.
+# noktanın farkı ile karşılaştırılmasına dayanır. Eğer çıkan sonuc büyük ise muhtemel bir köşe çizilinebilir denmektedir. daha dogrusu
+#muhtemel köse noktalarının sayısını köse olma olabiliritesi en yüksek olan degerlere indirgeme cabası.
 # Bu veri KNN veya başka makine öğrenmesi algoritmalarında bağımsız değişken olarak kullanılacaktır.
 
