@@ -46,8 +46,9 @@ def perimeterRadiusRelation(image):
         oranlar.append(oran)
 
         img = cv2.circle(resized, center, int(radius), (0, 255, 0), 2)
-        cv2.imshow("Image", resized)
-        cv2.waitKey(0)
+     #   cv2.imshow("Image", resized)
+     #   cv2.waitKey(0)
+    return oranlar
 #burada yapilan islem, tespit edilen seklin cevre uzunlugunu seklin üzerine cizilebilinen minumum alana sahip cemberin cabına oranı
 # sistemimiz için bagımsız degisken olarak kullanılacaktır.
 
@@ -65,14 +66,25 @@ def findContourNumber(image):
                                                       #artıyor. Bu sebeple cikan kose noktalarinin sayisinda azalma oluyor. En cok azalma
                                                       # cemberler icin oluyor.
         koseSayisi.append(approx)
-        print(peri,approx)
-        print(len(koseSayisi[a]))
-        a = a + 1
-        cv2.imshow("Image", resized)
-        cv2.waitKey(0)
+        #print(peri,approx)
+
+       # cv2.imshow("Image", resized)
+       # cv2.waitKey(0)
        # print(len(cnts)) #sonradan ön işleme için bunu bir listede tutabilirsin.
+    return koseSayisi
+
+def cizdir(image):
+    cnts, ratio = findContour(image)
+    resized = imutils.resize(image, width=300)
 
 
+    for i in cnts:
+
+        i = i*ratio
+        i = i.astype("int")
+        cv2.drawContours(image, [i], -1, (0, 255, 0), 2)
+        #cv2.imshow("Image", image)
+       # cv2.waitKey(0)
 
 def findLocicalEdge(image):
 
@@ -119,7 +131,7 @@ def findLocicalEdge(image):
         beyazKume.clear()
         karaKume.clear()
 
-
+    return koseSayisi
 # burada işeyen kodun mantığı findContour() ile bulunan bir köşe noktasından diğer bulunan köşe noktalarına kaç adet köşe
 # çizilebileceğimizi test etmeye çalışmaktadır. Algoritmanın işleyişi:
 # > kıyaslanan noktaların birbirinden farkını alarak (x-y eksenleri için ayrı ayrı) çıkan sonucu şeklin orta noktası ile kıyaslanan

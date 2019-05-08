@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 import imutils
 np.random.seed(0)  # seed for reproducibility
 
-img = cv2.imread("../Images/karisik.png")
+img = cv2.imread("../Images/kare.png")
 
 x1 = np.random.randint(10, size=6)  # One-dimensional array
 x2 = np.random.randint(10, size=(3, 4))  # Two-dimensional array

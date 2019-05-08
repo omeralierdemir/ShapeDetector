@@ -4,15 +4,20 @@ from WorkSpace import DataPreprocessing
 from matplotlib import pyplot as plt
 
 
-dt = DataPreprocessing
-image = cv2.imread("../Images/karisik.png")
 
-dt.perimeterRadiusRelation(image)
-#dt.findContourNumber(image)
-#dt.findLocicalEdge(image)
+
+dt = DataPreprocessing
+image = cv2.imread("../Images/kare.png")
+
+#dt.cizdir(image)
+a = dt.perimeterRadiusRelation(image)
+b = dt.findContourNumber(image)
+c = dt.findLocicalEdge(image)
+
+
 resized = imutils.resize(image, width=300)
 
-
+# for söngüsü dönder ekeman sayısı kadar. zaten ratio haric geri kalanın length i tutulacak.
 ratio = image.shape[0] / float(resized.shape[0])
 
 # convert the resized image to grayscale, blur it slightly,
