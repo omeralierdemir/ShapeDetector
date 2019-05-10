@@ -2,7 +2,7 @@ import cv2
 import imutils
 import numpy as np
 from matplotlib import pyplot as plt
-
+import math
 
 
 def findContour(image):
@@ -41,8 +41,8 @@ def perimeterRadiusRelation(image):
         perimeter = cv2.arcLength(i, True)
         (x, y), radius = cv2.minEnclosingCircle(i)
         center = (int(x), int(y))
-        radius = int(radius) *2
-        oran = round(perimeter / radius ,2)
+        radius = int(radius) * 2
+        oran = round(perimeter / radius,2)
         oranlar.append(oran)
 
         img = cv2.circle(resized, center, int(radius), (0, 255, 0), 2)
@@ -105,8 +105,9 @@ def findLocicalEdge(image):
                 for k in i:# cnts de sıkıntı var
                     b = list(k[0])
 
-                    if abs(k[0][0] - j[0][0]) < abs(cX - j[0][0]) and abs(k[0][1] - j[0][1]) < abs(cY - j[0][1]):
+                    if math.sqrt((k[0][0] - j[0][0])**2 + (k[0][1] - j[0][1])**2) < math.sqrt((cX - j[0][0])**2 + (cY - j[0][1])**2):
                         if a != b:
+
                             karaKume.add((k[0][0],k[0][1]))
                     else:
 
