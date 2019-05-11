@@ -7,7 +7,7 @@ from matplotlib import pyplot as plt
 
 
 dt = DataPreprocessing
-image = cv2.imread("../Images/cember3.png")
+image = cv2.imread("../Images/altigen.png")
 contourEdgeNumbers = []
 contourNumbers = []
 shapeClass = []
@@ -25,7 +25,7 @@ for i in range(len(ratio)):
 
     contourEdgeNumbers.append(len(contourEdge[i]))
     contourNumbers.append(len(contour[i]))
-    shapeClass.append("cember")
+    shapeClass.append("altigen")
 
 df2 = pd.DataFrame({"ratio":ratio,
                     "contourApprox":contourNumbers,
