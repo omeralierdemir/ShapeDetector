@@ -85,5 +85,5 @@ if __name__ == '__main__':
     image = cv2.imread("../Images/shapes_and_colors.png")
     veriler = pd.read_csv("../Veriler/veriler.csv")
 
-   # uygulamaTest(image,veriler)
-    sistemTest(veriler)
+    uygulamaTest(image,veriler)
+   # sistemTest(veriler)
