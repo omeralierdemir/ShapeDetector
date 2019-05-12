@@ -86,4 +86,5 @@ if __name__ == '__main__':
     veriler = pd.read_csv("../Veriler/veriler.csv")
 
     uygulamaTest(image,veriler)
+
    # sistemTest(veriler)

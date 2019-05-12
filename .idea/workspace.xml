@@ -6,10 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5cd54b47-482e-42b4-a96f-f90ee9548839" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkSpace/DataPreprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/WorkSpace/DataPreprocessing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WorkSpace/ShapeDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/WorkSpace/ShapeDetector.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WorkSpace/concatData.py" beforeDir="false" afterPath="$PROJECT_DIR$/WorkSpace/concatData.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WorkSpace/ShapeDetector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
+            <state relative-caret-position="321">
+              <caret line="89" column="3" selection-start-line="89" selection-start-column="3" selection-end-line="89" selection-end-column="3" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -534,8 +531,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WorkSpace/ShapeDetector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
+        <state relative-caret-position="321">
+          <caret line="89" column="3" selection-start-line="89" selection-start-column="3" selection-end-line="89" selection-end-column="3" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
