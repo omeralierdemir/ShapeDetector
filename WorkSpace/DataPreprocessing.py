@@ -22,8 +22,8 @@ def findContour(image):
 
     return cnts,ratio
 
-def findContourWithAprrox(image):
-    cnts, ratio = findContour(image)
+def findContourWithAprrox(cnts):
+    #cnts, ratio = findContour(image)
     koseSayisi = []
 
     for i in cnts:
@@ -32,9 +32,9 @@ def findContourWithAprrox(image):
         koseSayisi.append(approx)
 
 
-def perimeterRadiusRelation(image):
-    cnts, ratio = findContour(image)
-    resized = imutils.resize(image, width=300)
+def perimeterRadiusRelation(cnts):
+   # cnts, ratio = findContour(image)
+    #resized = imutils.resize(image, width=300)
     oranlar = []
 
     for i in cnts:
@@ -45,16 +45,16 @@ def perimeterRadiusRelation(image):
         oran = round(perimeter / radius,2)
         oranlar.append(oran)
 
-        img = cv2.circle(resized, center, int(radius), (0, 255, 0), 2)
+      #  img = cv2.circle(resized, center, int(radius), (0, 255, 0), 2)
      #   cv2.imshow("Image", resized)
      #   cv2.waitKey(0)
     return oranlar
 #burada yapilan islem, tespit edilen seklin cevre uzunlugunu seklin üzerine cizilebilinen minumum alana sahip cemberin cabına oranı
 # sistemimiz için bagımsız degisken olarak kullanılacaktır.
 
-def findContourNumber(image):
+def findContourNumber(image,cnts):
 
-    cnts,ratio = findContour(image)
+    #cnts,ratio = findContour(image)
     resized = imutils.resize(image, width=300)
     koseSayisi = []
     a = 0
@@ -66,33 +66,35 @@ def findContourNumber(image):
                                                       #artıyor. Bu sebeple cikan kose noktalarinin sayisinda azalma oluyor. En cok azalma
                                                       # cemberler icin oluyor.
         koseSayisi.append(approx)
-        #print(peri,approx)
 
-       # cv2.imshow("Image", resized)
-       # cv2.waitKey(0)
-       # print(len(cnts)) #sonradan ön işleme için bunu bir listede tutabilirsin.
     return koseSayisi
 
-def cizdir(image):
-    cnts, ratio = findContour(image)
-    resized = imutils.resize(image, width=300)
+def cizdir(image,shape):
 
+    cnts,ratio = findContour(image)
+    j = 0
 
     for i in cnts:
-
-        i = i*ratio
+        M = cv2.moments(i)
+        cX = int((M["m10"] / M["m00"]) * ratio)
+        cY = int((M["m01"] / M["m00"]) * ratio)
+        i = i.astype("float")
+        i *= ratio
         i = i.astype("int")
         cv2.drawContours(image, [i], -1, (0, 255, 0), 2)
-        #cv2.imshow("Image", image)
-       # cv2.waitKey(0)
+        cv2.putText(image, shape[j], (cX, cY), cv2.FONT_HERSHEY_SIMPLEX,
+                    0.5, (255, 255, 255), 2)
+        j = j + 1
+        cv2.imshow("Image", image)
+        cv2.waitKey(0)
 
-def findLocicalEdge(image):
+def findLocicalEdge(image,cnts):
 
     koseSayisi = []
     karaListe = []
     beyazKume = set(()) # used set data struct for non dublicate value
     karaKume = set(())
-    cnts,ratio = findContour(image)
+    #cnts,ratio = findContour(image)
 
     for i in cnts:
         M = cv2.moments(i)

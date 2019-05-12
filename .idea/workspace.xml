@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/WorkSpace/DataPreprocessing.py" line="113" mnemonic="2" />
+    <bookmark url="file://$PROJECT_DIR$/WorkSpace/DataPreprocessing.py" line="115" mnemonic="2" />
+    <bookmark url="file://$PROJECT_DIR$/WorkSpace/concatData.py" description="&#10;ratio = dt.perimeterRadiusRelation(cnts)&#10;contour ..." line="15" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5cd54b47-482e-42b4-a96f-f90ee9548839" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Veriler/veriler.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Veriler/veriler.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Veriler/verilerr.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Veriler/verilerr.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WorkSpace/DataPreprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/WorkSpace/DataPreprocessing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WorkSpace/ShapeDetector.py" beforeDir="false" afterPath="$PROJECT_DIR$/WorkSpace/ShapeDetector.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WorkSpace/concatData.py" beforeDir="false" afterPath="$PROJECT_DIR$/WorkSpace/concatData.py" afterDir="false" />
     </list>
@@ -22,8 +22,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WorkSpace/ShapeDetector.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+            <state relative-caret-position="168">
+              <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -32,10 +32,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/sklearn/base.py">
+        <entry file="file://$PROJECT_DIR$/WorkSpace/DataPreprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="86">
-              <caret line="331" column="8" selection-start-line="331" selection-start-column="8" selection-end-line="331" selection-end-column="8" />
+            <state relative-caret-position="1344">
+              <caret line="64" column="33" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="33" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -43,8 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WorkSpace/concatData.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="469">
-              <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+            <state relative-caret-position="132">
+              <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="15" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -54,26 +57,14 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Veriler/verilerr.csv">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3946" />
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Veriler/veriler.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2583" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/WorkSpace/DataPreprocessing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="882">
-              <caret line="46" selection-start-line="46" selection-end-line="46" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -125,8 +116,8 @@
         <option value="$PROJECT_DIR$/Veriler/veriler.csv" />
         <option value="$PROJECT_DIR$/WorkSpace/breadboard2.py" />
         <option value="$PROJECT_DIR$/WorkSpace/breadboard.py" />
-        <option value="$PROJECT_DIR$/WorkSpace/DataPreprocessing.py" />
         <option value="$PROJECT_DIR$/WorkSpace/concatData.py" />
+        <option value="$PROJECT_DIR$/WorkSpace/DataPreprocessing.py" />
         <option value="$PROJECT_DIR$/WorkSpace/ShapeDetector.py" />
       </list>
     </option>
@@ -324,9 +315,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.09980172" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.09980172" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.3286119" />
       <window_info anchor="bottom" id="Event Log" order="1" sideWeight="0.50033045" side_tool="true" weight="0.3286119" />
@@ -334,7 +326,7 @@
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.3286119" />
       <window_info anchor="bottom" id="Version Control" order="5" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49966952" visible="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49966952" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="7" sideWeight="0.49966952" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
@@ -368,12 +360,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WorkSpace/DataPreprocessing.py</url>
-          <line>88</line>
+          <line>90</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/WorkSpace/concatData.py</url>
-          <line>25</line>
+          <line>26</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
@@ -478,15 +470,22 @@
     <entry file="file://$PROJECT_DIR$/Images/dikdortgen1.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/WorkSpace/DataPreprocessing.py">
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/sklearn/metrics/classification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="882">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="149">
+          <caret line="186" column="4" selection-start-line="186" selection-start-column="4" selection-end-line="186" selection-end-column="4" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/sklearn/base.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6741">
+          <caret line="331" column="8" selection-start-line="331" selection-start-column="8" selection-end-line="331" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Veriler/veriler.csv">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/WorkSpace/breadboard2.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -510,8 +509,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/WorkSpace/concatData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
+        <state relative-caret-position="132">
+          <caret line="10" selection-start-line="10" selection-end-line="12" selection-end-column="15" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
@@ -519,31 +518,24 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Veriler/verilerr.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/sklearn/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="86">
-          <caret line="331" column="8" selection-start-line="331" selection-start-column="8" selection-end-line="331" selection-end-column="8" />
-        </state>
+        <state relative-caret-position="-3946" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/sklearn/metrics/classification.py">
+    <entry file="file://$PROJECT_DIR$/WorkSpace/DataPreprocessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="186" column="4" selection-start-line="186" selection-start-column="4" selection-end-line="186" selection-end-column="4" />
+        <state relative-caret-position="1344">
+          <caret line="64" column="33" lean-forward="true" selection-start-line="64" selection-start-column="21" selection-end-line="64" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Veriler/veriler.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2583" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WorkSpace/ShapeDetector.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="38" column="17" selection-start-line="38" selection-start-column="17" selection-end-line="38" selection-end-column="17" />
+        <state relative-caret-position="168">
+          <caret line="23" column="62" selection-start-line="23" selection-start-column="62" selection-end-line="23" selection-end-column="62" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>

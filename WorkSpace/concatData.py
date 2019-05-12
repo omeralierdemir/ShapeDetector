@@ -12,9 +12,10 @@ contourEdgeNumbers = []
 contourNumbers = []
 shapeClass = []
 #dt.cizdir(image)
-ratio = dt.perimeterRadiusRelation(image)
-contour = dt.findContourNumber(image)
-contourEdge = dt.findLocicalEdge(image)
+cnts,shapeRatio = dt.findContour(image)
+ratio = dt.perimeterRadiusRelation(cnts)
+contour = dt.findContourNumber(image,cnts)
+contourEdge = dt.findLocicalEdge(image,cnts)
 
 df = pd.read_csv("../Veriler/veriler.csv",index_col=False)
 #print(df)
